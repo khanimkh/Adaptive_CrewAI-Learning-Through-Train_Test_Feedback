@@ -162,7 +162,6 @@ docker compose exec support-train-test-web python -m support_train_test_crew.mai
 ## Acknowledgments
 
 - **[DeepLearning.AI](https://www.deeplearning.ai/)** — for the *Multi AI Agent Systems with crewAI* short course that inspired the multi-agent architecture and train/test feedback patterns used in this project.
-- **[Coursera](https://www.coursera.org/)** — for hosting the DeepLearning.AI course content and providing an accessible learning platform.
 - **[CrewAI](https://www.crewai.com/)** — for the open-source multi-agent orchestration framework powering this project.
 - **[OpenAI](https://openai.com/)** — for the language models driving agent reasoning and task execution.
 
