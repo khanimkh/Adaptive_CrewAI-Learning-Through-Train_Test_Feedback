@@ -1,0 +1,55 @@
+Adaptive-CrewAI Training Feedback Cheat Sheet
+
+Use this template whenever CrewAI asks for human feedback during train().
+
+CORE TEMPLATE
+Score: <0-10>
+What was good: <2-3 concrete strengths>
+What to improve: <2-3 concrete gaps>
+Required fix for next iteration: <specific, measurable change>
+
+QUICK RUBRIC (0-10 each)
+1) Accuracy: Are findings factually correct and aligned with ticket data?
+2) Actionability: Are actions executable, prioritized, and realistic?
+3) Completeness: Are owners, timelines, KPIs, and risks included?
+4) Clarity: Is output concise, structured, and easy for stakeholders?
+
+EXAMPLE FEEDBACKS TO PASTE
+
+A) For triage output
+Score: 7/10
+What was good: Correctly identified priority clusters and highlighted critical issues.
+What to improve: Missing root-cause hypotheses per issue type and impact quantification.
+Required fix for next iteration: Add issue-wise root cause, affected users, and expected business impact.
+
+B) For action strategy output
+Score: 8/10
+What was good: Recommendations are practical and mostly prioritized.
+What to improve: Missing explicit owner per action and SLA targets.
+Required fix for next iteration: Add owner, SLA, escalation trigger, and success KPI for each action.
+
+C) For final report output
+Score: 9/10
+What was good: Strong structure with clear findings and a useful plan.
+What to improve: Risk mitigations and fallback plans are not explicit.
+Required fix for next iteration: Add risk table with mitigation, fallback, and monitoring metric for each high-risk issue.
+
+HIGH-QUALITY PROMPTS YOU CAN REUSE
+- "Add a 30-day implementation table with weekly milestones, owners, KPIs, and dependencies."
+- "Quantify expected impact: target resolution time, CSAT improvement, and ticket reduction by category."
+- "Include 3 key risks, mitigation steps, fallback plan, and alert thresholds."
+- "Add an executive summary in 5 bullets for leadership review."
+
+DO / DON'T
+DO:
+- Be specific and measurable.
+- Keep one required fix that is testable in next iteration.
+- Keep scoring consistent across iterations.
+
+DON'T:
+- Give vague feedback (e.g., "make it better").
+- Change criteria every iteration.
+- Focus only on style while skipping correctness and KPI gaps.
+
+MINI ONE-LINER (if you want fast feedback)
+Score: 8/10 | Good structure and prioritization | Missing owners + KPI targets + fallback plan | Next iteration must include owner/SLA/KPI/risk table per issue.

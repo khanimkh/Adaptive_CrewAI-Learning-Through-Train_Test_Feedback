@@ -1,0 +1,32 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "support-train-test-crewai"
+version = "0.1.0"
+description = "CrewAI support ticket train and test workflow with backend and frontend"
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = [
+  "crewai>=0.121.0",
+  "crewai_tools>=0.12.1",
+  "fastapi>=0.115.0",
+  "uvicorn>=0.30.6",
+  "pydantic>=2.8.2",
+  "pandas>=2.2.2",
+  "matplotlib>=3.9.0",
+  "seaborn>=0.13.2",
+  "pyyaml>=6.0.2",
+  "python-dotenv>=1.0.1",
+]
+
+[tool.setuptools]
+package-dir = {"" = "src"}
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[project.scripts]
+support-train-test = "support_train_test_crew.main:main"
+support-web = "support_train_test_crew.api:main"

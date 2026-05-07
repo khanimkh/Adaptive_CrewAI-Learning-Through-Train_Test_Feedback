@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Adaptive CrewAI: Learning Through Train-Test-Feedback</title>
+    <link rel="stylesheet" href="/frontend/style.css" />
+  </head>
+  <body>
+    <div class="bg-shape bg-1"></div>
+    <div class="bg-shape bg-2"></div>
+
+    <main class="container">
+      <section class="hero">
+        <h1>Adaptive CrewAI: Learning Through Train-Test-Feedback</h1>
+        <p>
+          Run test and train in terminal mode, then use this web app to kickoff and compare saved cycle results and charts.
+        </p>
+      </section>
+
+      <section class="panel">
+        <h2>Web Kickoff Only</h2>
+        <div class="form-grid">
+          <label>
+            Sample Size
+            <input id="sampleSize" type="number" min="1" max="100" value="5" />
+          </label>
+        </div>
+        <button id="runBtn">Run Kickoff</button>
+        <p id="status" class="status"></p>
+      </section>
+
+      <section class="panel two-col">
+        <article>
+          <h3>Latest Terminal Cycle Status</h3>
+          <pre id="cycleStatus">No terminal cycle loaded yet.</pre>
+        </article>
+        <article>
+          <h3>Latest Saved Summary</h3>
+          <pre id="latestSummary">No summary loaded yet.</pre>
+        </article>
+      </section>
+
+      <section class="panel two-col">
+        <article>
+          <h3>Kickoff Process Log</h3>
+          <pre id="processLog">No run yet.</pre>
+        </article>
+        <article>
+          <h3>Latest Kickoff Output</h3>
+          <div id="finalReport" class="report">No run yet.</div>
+        </article>
+      </section>
+
+      <section class="panel">
+        <div class="row">
+          <h3>Charts</h3>
+          <button id="refreshLatestBtn" class="ghost">Refresh Latest Results</button>
+        </div>
+        <div id="chartGrid" class="chart-grid"></div>
+      </section>
+    </main>
+
+    <div id="chartModal" class="chart-modal hidden" role="dialog" aria-modal="true" aria-label="Expanded chart">
+      <button id="closeChartModal" class="modal-close" aria-label="Close">Close</button>
+      <img id="chartModalImage" alt="Expanded chart" />
+    </div>
+
+    <script src="/frontend/app.js"></script>
+  </body>
+</html>

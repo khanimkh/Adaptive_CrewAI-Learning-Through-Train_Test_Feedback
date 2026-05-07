@@ -1,0 +1,27 @@
+triage_tickets:
+  description: "Use ticket metrics and records to identify top issue patterns and priority bottlenecks. Incorporate this user feedback from terminal: {terminal_feedback}."
+  expected_output: "Bullet list of key issue clusters, priority risks, and probable root causes."
+  agent: ticket_triage_agent
+
+recommend_resolutions:
+  description: "Create action recommendations for high-impact issue clusters from triage, aligned with this terminal feedback: {terminal_feedback}."
+  expected_output: "Prioritized action plan with owners and expected outcomes."
+  agent: action_recommender_agent
+  context:
+    - triage_tickets
+
+audit_recommendations:
+  description: "Audit recommendation quality and identify missing safeguards or edge cases while considering this terminal feedback: {terminal_feedback}."
+  expected_output: "Audit findings with improvements and confidence score."
+  agent: quality_auditor_agent
+  context:
+    - recommend_resolutions
+
+compile_report:
+  description: "Produce a final report for stakeholders with findings and next steps. Explicitly include how this terminal feedback was addressed: {terminal_feedback}."
+  expected_output: "Structured report with sections: overview, findings, actions, and 30-day plan."
+  agent: reporting_agent
+  context:
+    - triage_tickets
+    - recommend_resolutions
+    - audit_recommendations

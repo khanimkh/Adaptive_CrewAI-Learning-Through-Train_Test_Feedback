@@ -1,0 +1,6 @@
+ticket_id,issue_type,priority,resolution_time_minutes,satisfaction_rating,customer_comment
+T-001,Login Issue,High,40,3.2,Unable to access account after password reset.
+T-002,Billing Issue,Critical,120,2.6,Charged twice for the same invoice.
+T-003,API Issue,Medium,80,3.4,Webhook payload fields are inconsistent.
+T-004,Report Generation,Low,25,4.1,Need export in xlsx format.
+T-005,Data Import,High,95,2.9,Import fails for larger files above 20MB.
